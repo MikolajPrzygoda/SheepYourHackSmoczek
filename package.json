@@ -1,0 +1,23 @@
+{
+  "name": "sheepyourhack-smoczek",
+  "version": "1.0.0",
+  "description": "Projekt serwisu w ramach hackatonu ShipYourHach",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikolajPrzygoda/SheepYourHackSmoczek.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikolajPrzygoda/SheepYourHackSmoczek/issues"
+  },
+  "homepage": "https://github.com/MikolajPrzygoda/SheepYourHackSmoczek#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
