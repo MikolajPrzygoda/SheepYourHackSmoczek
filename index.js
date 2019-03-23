@@ -2,19 +2,13 @@ const express = require('express');
 const app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var fs = require("fs");
 
-const PORT = 8888
+const PORT = 8888;
 
 app.use(express.static('public'));
 
-offers = [
-    {"title": "a", "description": "opisA", "cena": 0},
-    {"title": "b", "description": "opisB", "cena": 0},
-    {"title": "c", "description": "opisC", "cena": 0},
-    {"title": "d", "description": "opisD", "cena": 0},
-    {"title": "e", "description": "opisE", "cena": 0},
-    {"title": "f", "description": "opisF", "cena": 0}
-];
+offers = loadOffers();
 
 io.on('connection', function(socket){
   console.log('a user connected');
@@ -28,3 +22,11 @@ io.on('connection', function(socket){
 http.listen(PORT, function(){
   console.log('listening on *:8888');
 });
+
+function storeOffers(offers){
+    fs.writeFile("offers.json", JSON.stringify( offers ), "utf8");
+}
+
+function loadOffers(){
+    return require("./offers.json");
+}

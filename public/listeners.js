@@ -1,7 +1,10 @@
 var socket = io();
 
+var currentOffers;
+
 function loadOffers(){
     socket.emit("getOffers", (data) => {
-        console.log(data);
+        currentOffers = data;
     })
 }
+
